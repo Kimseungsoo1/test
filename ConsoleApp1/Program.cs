@@ -1,31 +1,20 @@
-﻿using System.Net.Sockets;
-
-class Program
+﻿class Program
 {
-    static int Add(int a, int b)
+    static void CountDown(int n)
     {
-        return a + b;
-    }
-
-    static float Add(float a, float b)
-    {
-        return a + b;
-    }
-
-    static int Add(int a, int b, int c)
-    {
-        return a + b + c;
+        if (n <= 0)
+        {
+            Console.WriteLine("Done");
+        }
+        else
+        {
+            Console.WriteLine(n);
+            CountDown(n - 1);
+        }
     }
 
     static void Main(string[] args)
     {
-        int sum1 = Add(10, 20);
-        float sum2 = Add(10.5f, 20.2f);
-        int sum3 = Add(10, 20, 30);
-        
-        Console.WriteLine(sum1);
-        Console.WriteLine(sum2);
-        Console.WriteLine(sum3);
+        CountDown(5);
     }
-    
 }
