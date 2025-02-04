@@ -1,28 +1,31 @@
-﻿void PrintLine()
+﻿using System.Net.Sockets;
+
+class Program
 {
-    for (int i = 0; i < 3; i++)
+    static int Add(int a, int b)
     {
-        Console.Write("=");
+        return a + b;
     }
-    Console.WriteLine();
-}
 
-void PrintLine2(int count)
-{
-    for (int i = 0; i < count; i++)
+    static float Add(float a, float b)
     {
-        Console.Write("=");
+        return a + b;
     }
-    Console.WriteLine();
+
+    static int Add(int a, int b, int c)
+    {
+        return a + b + c;
+    }
+
+    static void Main(string[] args)
+    {
+        int sum1 = Add(10, 20);
+        float sum2 = Add(10.5f, 20.2f);
+        int sum3 = Add(10, 20, 30);
+        
+        Console.WriteLine(sum1);
+        Console.WriteLine(sum2);
+        Console.WriteLine(sum3);
+    }
+    
 }
-
-int Add(int a, int b)
-{
-    return a + b;
-}
-
-PrintLine();
-PrintLine2(5);
-
-int result = Add(10, 20);
-Console.WriteLine(result);
